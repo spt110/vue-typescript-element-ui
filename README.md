@@ -2,6 +2,11 @@
 
 > vue-typescript-element-ui with Typescript and element-ui in Vue
 
+This demo depends on [vue-class-component](https://github.com/vuejs/vue-class-component)
+
+This demo depends on [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator)
+
+This demo depends on [element-ui](https://github.com/ElemeFE/element)
 ## Build Setup
 
 ``` bash
