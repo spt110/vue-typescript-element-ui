@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-  import TodoListItemComponent from '@/components/todo-list-item/todo-list-item'
+  import TodoListItemComponent from '@/components/todo-list-item/todo-list-item.component'
   export default TodoListItemComponent
 </script>
 

@@ -2,7 +2,6 @@
   import {Vue, Component} from 'vue-property-decorator'
   import Todo from '@/models/todo'
   import TodoListItem from '@/components/todo-list-item/TodoListItem.vue'
-
   @Component({
    components: {
     TodoListItem

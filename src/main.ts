@@ -9,8 +9,11 @@ import router from './router'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
-
+import InfiniteScroll from 'vue-infinite-scroll';
+import './assets/css/index.scss';
+import 'font-awesome/css/font-awesome.css';
 Vue.use(ElementUI)
+Vue.use(InfiniteScroll)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

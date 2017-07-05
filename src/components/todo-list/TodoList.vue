@@ -1,7 +1,7 @@
 <template>
-<div>
+<div class="todoList">
   <div>
-    <input @keydown.enter="addTodo(newtask)" type="text" v-model="newtask">
+    <input @keydown.enter="addTodo(newtask)" style="border:1px solid " type="text" v-model="newtask">
     </input>
     {{newtask}}
     <button @click="addTodo(newtask)">Add</button>
@@ -31,5 +31,13 @@
   margin-left: auto;
   margin-right: auto;
   text-align: left;
+}
+.todoList {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
 </style>
