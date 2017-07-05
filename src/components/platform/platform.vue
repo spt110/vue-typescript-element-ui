@@ -52,7 +52,7 @@
         </div>
         <p class="loading" v-show="loading">加载中...</p>
       </div>
-      <!--<zeus-detail @copy="copy" @edit="edit" :detailInfo="activeItem" :activeItemProp="activeItem" :statusProp="params.status"></zeus-detail>-->
+      <platform-detail @copy="copy" @edit="edit" :detailInfo="activeItem" :activeItemProp="activeItem" :statusProp="params.status"></platform-detail>
     </div>
     <!--<zeus-popup @clear="clear" :popupInfo="popupInfo"></zeus-popup>-->
     <!--<zeus-popup-edit @upload="upload" @clear="clearEdit" :companyInfo="companyInfo" :activeItemProp="activeItem"></zeus-popup-edit>-->

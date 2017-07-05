@@ -9,10 +9,12 @@ import { Vue, Prop, Component } from 'vue-property-decorator'
  import TodoListItem from '@/components/todo-list-item/TodoListItem.vue'
  import ZeusMenu from '@/components/zeus-menu/zeus-menu.vue';
  import ZeusUser from '@/components/zeus-user/zeus-user.vue';
+  import PlatformDetail from '@/components/platform/detail/platform-detail.vue';
   @Component({
    components: {
     ZeusMenu,
-    ZeusUser
+    ZeusUser,
+    PlatformDetail
     }
   })
 export default class PlatformComponent extends Vue {
