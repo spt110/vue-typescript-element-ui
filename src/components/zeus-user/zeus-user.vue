@@ -10,49 +10,9 @@
     </transition>
   </div>
 </template>
-<script>
-  import Api from '../../services/login.js';
-  import Clickoutside from 'element-ui/lib/utils/clickoutside';
-  export default {
-    directives: { Clickoutside },
-    data() {
-      return {
-        activeName: '',
-        showDropDown: false
-      };
-    },
-    methods: {
-      dropDown() {
-        this.showDropDown = !this.showDropDown;
-      },
-      handleBlur() {
-        this.showDropDown = false;
-      },
-      logout() {
-        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-        Api.logout({
-          token: userInfo.token,
-          accountId: userInfo.username
-        })
-        .then(({data}) => {
-          if (data.code === 1) {
-            this.$message({
-              message: '退出成功',
-              type: 'success'
-            });
-            setTimeout(() => {
-              location.href = '/login';
-            }, 500);
-          } else {
-            this.$message({
-              message: data.message,
-              type: 'warning'
-            });
-          }
-        });
-      }
-    }
-  };
+<script lang="ts">
+  import ZeusUserComponent from '@/components/zeus-user/zeus-user.component'
+  export default ZeusUserComponent
 </script>
 <style scoped lang="scss">
   .user {

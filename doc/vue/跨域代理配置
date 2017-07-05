@@ -1,0 +1,22 @@
+当跨域无法请求的时候我们可以修改工程下config文件夹下的index.js中的dev:{}部分。dev: {
+    env: require('./dev.env'),
+    port: 8080,
+    autoOpenBrowser: false,
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/',
+    proxyTable: {
+        '/api': {
+            target: 'http://api.douban.com/v2',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/api': ''
+            }
+        }
+    },
+    // CSS Sourcemaps off by default because relative paths are "buggy"
+    // with this option, according to the CSS-Loader README
+    // (https://github.com/webpack/css-loader#sourcemaps)
+    // In our experience, they generally work as expected,
+    // just be aware of this issue when enabling this option.
+    cssSourceMap: false
+}

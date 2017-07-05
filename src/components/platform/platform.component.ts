@@ -6,12 +6,13 @@ import PlatformService from '../../services/platform.service';
 import moment from 'moment';
 import debounce from 'throttle-debounce/debounce';
 import { Vue, Prop, Component } from 'vue-property-decorator'
-
  import TodoListItem from '@/components/todo-list-item/TodoListItem.vue'
  import ZeusMenu from '@/components/zeus-menu/zeus-menu.vue';
+ import ZeusUser from '@/components/zeus-user/zeus-user.vue';
   @Component({
    components: {
-    ZeusMenu
+    ZeusMenu,
+    ZeusUser
     }
   })
 export default class PlatformComponent extends Vue {
@@ -38,7 +39,7 @@ export default class PlatformComponent extends Vue {
     companyInfo: any = null // 公司信息 - 修改
 
     created() {
-       // this.search();
+     this.search();
     }
 
     // 获取左侧列表接口

@@ -14,7 +14,7 @@
       </div>
       <div class="header-help">
         <el-button type="primary" @click="addNew">新增</el-button>
-        <!--<zeus-user></zeus-user>-->
+        <zeus-user></zeus-user>
       </div>
     </header>
     <transition name="fade" mode="out-in" v-if="navList.length">
