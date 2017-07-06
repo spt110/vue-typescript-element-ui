@@ -35,7 +35,7 @@
             <li>
               <!--<h3 v-text="item.contractName"></h3>-->
               <p>
-                <label class="leftLabel" @click="test1">平台名称：</label>
+                <label class="leftLabel" >平台名称：</label>
                 <span>{{item&&item.platformName}}</span>
               </p>
               <p>

@@ -117,6 +117,7 @@ export default class PlatformComponent extends Vue {
     }
     // 点击左侧
     active(item) {
+        console.log(item);
         this.activeItem = item;
     }
     copy(value) {

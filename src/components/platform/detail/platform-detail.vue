@@ -159,30 +159,10 @@
 
                 </el-tabs>
             </div>
-            <!--<div class="main-box company-list">
-              <div class="main-box-title">
-                <h3>包含功能集： {{resSetList.length}}个</h3>
-              </div>
-              <div class="main-box-content table service-module-list">
-                <ul class="table-title">
-                  <li>模块</li>
-                  <li>功能集</li>
-                </ul>
-                <ul class="table-body" v-for="(item,index) in resSetList">
-                  <li v-text="item.moduleName"></li>
-                    &lt;!&ndash;v-text="item.resourceSetName"&ndash;&gt;
-                  <li class="resourceSetNameBox" @mouseenter="showAll(index)" @mouseout="hideAll(index)">
-                    <div class="content">{{item.resourceSetName}}</div>
-                    <div class="resourceSetName" v-show="item.hover">{{item.resourceSetName}}</div>
-                  </li>
-                </ul>
-                <p class="null" v-if="!resSetList.length">暂无数据</p>
-              </div>
-            </div>-->
         </div>
     </transition>
 </template>
-<script>
+<script lang="ts">
   import PlatformDetailComponent from '@/components/platform/detail/platform-detail.component'
   export default PlatformDetailComponent
 </script>

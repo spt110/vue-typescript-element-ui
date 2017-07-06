@@ -1,8 +1,8 @@
 
 import TodoList from '@/components/todo-list/TodoList.vue'
 import Platform from '@/components/platform/platform.vue'
-export default [
 
+export default [
   {
     path: '/platform',
     component: Platform,

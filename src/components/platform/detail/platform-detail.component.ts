@@ -1,17 +1,12 @@
 import { Vue, Prop, Component } from 'vue-property-decorator'
+import axios from 'axios'
+
 @Component({
   name: 'platform-detail'
 })
 export default class PlatformDetailComponent extends Vue {
-    _detailInfo: any;
-    @Prop()
-    set detailInfo(value: any) {
-        this._detailInfo = value;
-        this.getDetail();
-    }
-    get detailInfo() {
-        return this._detailInfo;
-    }
+      @Prop()
+    detailInfo: any;
     @Prop()
     statusProp: any;
     companyInfo: any = {};
@@ -27,18 +22,22 @@ export default class PlatformDetailComponent extends Vue {
     accountDetails: any[] = [];
     accountSearch: String = "";
     multiplFalse: boolean = false;
-    // 通过对应的集团 or 公司获取公司列表
+    baseUrl=axios.defaults.baseURL;
+    headers={'X-Access-Token':axios.defaults.headers.common['X-Access-Token'],
+                'X-Operation-Token':axios.defaults.headers.common['X-Operation-Token'],};
     getDetail() {
     }
     formatDate(item) {
         return (item.substr(0, 4) + '-' + item.substr(4, 2) + '-' + item.substr(6, 2));
     }
-    // 复制
     copy() {
+
     }
     edit() {
+
     }
     del() {
+
     }
     showAll(index) {
         this.resSetList[index].hover = true;
@@ -54,7 +53,6 @@ export default class PlatformDetailComponent extends Vue {
     addServicePackage() {
         this.servicePackageModalShow = true;
     }
-  
     delTenant(id) {
       
     }
@@ -63,6 +61,38 @@ export default class PlatformDetailComponent extends Vue {
     }
     searchAccount() {
     
+    }
+    uploadSuccess()
+    {
+
+    }
+    uploadError()
+    {
+
+    }
+    closeTenantModal()
+    {
+
+    }
+    querySearchAsync()
+    {
+
+    }
+    handleSelect()
+    {
+
+    }
+    closeServicePackageModal()
+    {
+
+    }
+    querySearchAsync2()
+    {
+
+    }
+    handleSelect2()
+    {
+        
     }
 }
 
