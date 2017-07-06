@@ -1,28 +1,33 @@
 import Clickoutside from 'element-ui/lib/utils/clickoutside';
 import { Vue, Prop, Component } from 'vue-property-decorator';
-import { Message,Dialog } from 'element-ui';
-
+import { Message } from 'element-ui';
+import C8Dialog from "@/components/c8-dialog/c8-dialog.vue";
+import C8DialogComponent from "@/components/c8-dialog/c8-dialog.component";
+import PlatformService from "@/services/platform.service";
 @Component({
     name: "platform-edit",
-    directives: { Clickoutside }
+    directives: { Clickoutside },
+    components: { C8Dialog }
 })
 export default class PlatformEditComponent extends Vue {
+    service: PlatformService = new PlatformService();
     form: any = {};
-   private dialog:Dialog;
-    formLabelWidth:String="100px";
-    dialogTableVisible:boolean=false;
-     mounted() {
+    private dialog: C8DialogComponent;
+    formLabelWidth: String = "100px";
+    // dialogTableVisible:boolean=false;
+    mounted() {
         let win: any = this.$refs["dialog"];
-        this.dialog =win;
+        this.dialog = win;
     }
     show() {
-       // this.showBox = true;
-        this.dialogTableVisible=true;
+        this.dialog.title = "平台新增";
+        this.dialog.show();
     }
     close() {
-       this.dialogTableVisible=false;
+        this.dialog.close();
     }
     save(num) {
+        console.log(this.form);
         if (!this.form.platformName) {
             Message({
                 showClose: true,
@@ -39,6 +44,11 @@ export default class PlatformEditComponent extends Vue {
             });
             return;
         }
+        this.service.saveModel(this.form).then(r => {
+            if (r.data.result) {
+                this.close();
+            }
+        });
     }
 }
 

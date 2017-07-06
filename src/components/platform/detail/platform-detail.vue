@@ -1,5 +1,5 @@
 <template>
-    <transition name="fade" mode="out-in">
+    <transition name="fade" mode="out-in" v-if="detailInfo">
         <div class="page-main">
             <div class="main-box">
                 <el-tabs value="first" type="card">

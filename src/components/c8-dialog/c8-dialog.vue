@@ -1,7 +1,10 @@
 <template>
-<el-dialog  ref="dialog" title="平台"   :visible.sync="dialogTableVisible">
- 
+
+<el-dialog  ref="dialog"  v-bind:title="title"   :visible.sync="dialogTableVisible">
+
+<slot> </slot>
 </el-dialog>
+
 </template>
 <script lang="ts">
   import C8DialogComponent from '@/components/c8-dialog/c8-dialog.component'

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { CallResult } from "@/business-model/CallResult";
 
 export default class PlatformService {
   search(params1, params2) {
@@ -18,7 +19,7 @@ export default class PlatformService {
     });
 
   }
-  newPlatform(params) {
+  saveModel(params) {
     return axios.post(`platform/saveModel`,params);
 
   }
@@ -31,18 +32,14 @@ export default class PlatformService {
   getFunList(params1, params2) {
     return axios.post('resource-set/search', params1, {params: params2});
   }
-  create(params) {
-    return axios.post('contract/create', params);
-  }
+
   edit(id, params) {
     return axios.put(`contract/${id}/edit`, params);
   }
   tenantFuzzy(params){
     return axios.get(`tenant/search-by-name`,{params:params});
   }
-  servicePackageFuzzy(params){
-    return axios.get(`contract/search-by-name-non-tenant`,{params:params});
-  }
+
   addPlatformTenant(params) {
     return axios.post('platform/savePlatformTenant', params);
   }
@@ -59,7 +56,5 @@ export default class PlatformService {
       headers:{'Content-Type':'application/json;charset=UTF-8'}
     })
   }
-  accountDetail(p){
-    return axios.get('/platform/'+p.id+'/account/search',{params:p.params})
-  }
+
 };
