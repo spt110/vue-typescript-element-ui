@@ -6,27 +6,29 @@ import PlatformService from '../../services/platform.service';
 import moment from 'moment';
 import debounce from 'throttle-debounce/debounce';
 import { Vue, Prop, Component } from 'vue-property-decorator'
- import TodoListItem from '@/components/todo-list-item/TodoListItem.vue'
- import ZeusMenu from '@/components/zeus-menu/zeus-menu.vue';
- import ZeusUser from '@/components/zeus-user/zeus-user.vue';
-  import PlatformDetail from '@/components/platform/detail/platform-detail.vue';
-  @Component({
-   components: {
-    ZeusMenu,
-    ZeusUser,
-    PlatformDetail
+import TodoListItem from '@/components/todo-list-item/TodoListItem.vue'
+import ZeusMenu from '@/components/zeus-menu/zeus-menu.vue';
+import ZeusUser from '@/components/zeus-user/zeus-user.vue';
+import PlatformDetail from '@/components/platform/detail/platform-detail.vue';
+import PlatformEdit from '@/components/platform/edit/platform-edit.vue';
+import PlatformEditComponent from "@/components/platform/edit/platform-edit.component";
+@Component({
+    components: {
+        ZeusMenu,
+        ZeusUser,
+        PlatformDetail,
+        PlatformEdit
     }
-  })
+})
 export default class PlatformComponent extends Vue {
     service: PlatformService = new PlatformService();
     loading: boolean = true;
     loadOVer: boolean = true;
+    winEdit: PlatformEditComponent;
     filter = {
         serviceName: '', // 服务包名称
         companyName: '' // 公司名称
     };
-    dataStart: String = ''; // 开始时间
-    dataEnd: String = ''; // 结束时间
     navList: any = []; // 状态栏信息,
     tabs = []; // 左侧 tab 标签
     activeStatus: String = '1';
@@ -41,9 +43,15 @@ export default class PlatformComponent extends Vue {
     companyInfo: any = null // 公司信息 - 修改
 
     created() {
-     this.search();
-    }
+        this.search();
 
+    }
+    mounted() {
+        console.log(this.$refs.winEdit);
+        let win: any = this.$refs["winEdit"];
+        this.winEdit = win;
+        console.log(this.winEdit);
+    }
     // 获取左侧列表接口
     fetchData(params) {
         this.loading = true;
@@ -136,9 +144,7 @@ export default class PlatformComponent extends Vue {
         this.search();
     }
     addNew() {
-        this.popupInfo = {
-            new: true
-        };
+        this.winEdit.show();
     }
 
 }

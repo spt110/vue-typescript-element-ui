@@ -54,10 +54,11 @@
       </div>
       <platform-detail @copy="copy" @edit="edit" :detailInfo="activeItem" :activeItemProp="activeItem" :statusProp="params.status"></platform-detail>
     </div>
-    <!--<zeus-popup @clear="clear" :popupInfo="popupInfo"></zeus-popup>-->
+    <platform-edit ref="winEdit" ></platform-edit>
     <!--<zeus-popup-edit @upload="upload" @clear="clearEdit" :companyInfo="companyInfo" :activeItemProp="activeItem"></zeus-popup-edit>-->
   </section>
 </template>
+
 <script lang="ts">
   import PlatformComponent from '@/components/platform/platform.component'
   export default PlatformComponent
