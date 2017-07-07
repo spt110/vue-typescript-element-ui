@@ -1,6 +1,6 @@
 
 import TodoList from '@/components/todo-list/TodoList.vue'
-import Platform from '@/components/platform/platform.vue'
+import Platform from '@/pages/platform/platform.vue'
 
 export default [
   {

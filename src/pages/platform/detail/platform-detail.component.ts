@@ -1,11 +1,14 @@
 import { Vue, Prop, Component } from 'vue-property-decorator'
 import axios from 'axios'
-
+import TenantSelectDialog from '@/components/tenant-select-dialog/tenant-select-dialog.vue';
+import TenantSelectDialogComponent from "@/components/tenant-select-dialog/tenant-select-dialog.component";
 @Component({
-  name: 'platform-detail'
+    name: 'platform-detail',
+    components: { TenantSelectDialog }
 })
 export default class PlatformDetailComponent extends Vue {
-      @Prop()
+    winTenantSelect: TenantSelectDialogComponent;
+    @Prop()
     detailInfo: any;
     @Prop()
     statusProp: any;
@@ -22,9 +25,18 @@ export default class PlatformDetailComponent extends Vue {
     accountDetails: any[] = [];
     accountSearch: String = "";
     multiplFalse: boolean = false;
-    baseUrl=axios.defaults.baseURL;
-    headers={'X-Access-Token':axios.defaults.headers.common['X-Access-Token'],
-                'X-Operation-Token':axios.defaults.headers.common['X-Operation-Token'],};
+    baseUrl = axios.defaults.baseURL;
+    headers = {
+        'X-Access-Token': axios.defaults.headers.common['X-Access-Token'],
+        'X-Operation-Token': axios.defaults.headers.common['X-Operation-Token'],
+    };
+
+    mounted() {
+
+        console.log("111refs2");
+        console.log(this.$refs);
+        console.log(this.$refs["tenantSelectDialog"]);
+    }
     getDetail() {
     }
     formatDate(item) {
@@ -48,51 +60,48 @@ export default class PlatformDetailComponent extends Vue {
         console.log('out');
     }
     addGroup() {
-        this.tenantModalShow = true;
+        if (!this.winTenantSelect) {
+            let dialog: any = this.$refs["tenantSelectDialog"];
+            this.winTenantSelect = dialog;
+        }
+         console.log(this.$refs["tenantSelectDialog"]);
+         this.winTenantSelect.show();
     }
     addServicePackage() {
         this.servicePackageModalShow = true;
     }
     delTenant(id) {
-      
+
     }
     delPackage(id) {
-     
+
     }
     searchAccount() {
-    
-    }
-    uploadSuccess()
-    {
 
     }
-    uploadError()
-    {
+    uploadSuccess() {
 
     }
-    closeTenantModal()
-    {
+    uploadError() {
 
     }
-    querySearchAsync()
-    {
+    closeTenantModal() {
 
     }
-    handleSelect()
-    {
+    querySearchAsync() {
 
     }
-    closeServicePackageModal()
-    {
+    handleSelect() {
 
     }
-    querySearchAsync2()
-    {
+    closeServicePackageModal() {
 
     }
-    handleSelect2()
-    {
-        
+    querySearchAsync2() {
+
+    }
+    handleSelect2() {
+
     }
 }
 

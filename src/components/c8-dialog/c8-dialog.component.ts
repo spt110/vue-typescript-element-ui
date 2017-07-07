@@ -7,7 +7,7 @@ import { Dialog } from 'element-ui';
 export default class C8DialogComponent extends Vue {
     private dialog: Dialog;
     dialogTableVisible: boolean = false;
-    title:String; 
+    title:String=""; 
 
     mounted() {
         let win: any = this.$refs["dialog"];

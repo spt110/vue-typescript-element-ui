@@ -60,8 +60,8 @@
 </template>
 
 <script lang="ts">
-  import PlatformComponent from '@/components/platform/platform.component'
-  export default PlatformComponent
+  import PlatformPage from '@/pages/platform/platform.page'
+  export default PlatformPage
 </script>
 <style lang="scss">
   .service {

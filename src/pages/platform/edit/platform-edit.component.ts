@@ -1,4 +1,3 @@
-import Clickoutside from 'element-ui/lib/utils/clickoutside';
 import { Vue, Prop, Component } from 'vue-property-decorator';
 import { Message } from 'element-ui';
 import C8Dialog from "@/components/c8-dialog/c8-dialog.vue";
@@ -6,7 +5,6 @@ import C8DialogComponent from "@/components/c8-dialog/c8-dialog.component";
 import PlatformService from "@/services/platform.service";
 @Component({
     name: "platform-edit",
-    directives: { Clickoutside },
     components: { C8Dialog }
 })
 export default class PlatformEditComponent extends Vue {

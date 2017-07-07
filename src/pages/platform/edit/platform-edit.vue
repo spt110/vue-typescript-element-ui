@@ -18,7 +18,7 @@
 </c8-dialog>
 </template>
 <script lang="ts">
-  import PlatformEditComponent from '@/components/platform/edit/platform-edit.component'
+  import PlatformEditComponent from '@/pages/platform/edit/platform-edit.component'
   export default PlatformEditComponent
 </script>
 <style lang="scss"  >

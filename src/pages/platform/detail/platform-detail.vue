@@ -42,20 +42,7 @@
                         </div>
                         <div class="tenantBox">
                             <div class="tenantTile"><span>集团</span><a href="javascript:;" @click="addGroup">新增</a></div>
-                            <el-dialog v-model="tenantModalShow" custom-class="modifyRuleModalClass"
-                                       :show-close="showFalse">
-                                <div class="close-container">
-                                    <img src="../../../assets/image/close_gray.png" alt="closeBtn"
-                                         @click="closeTenantModal">
-                                </div>
-                                <el-autocomplete
-                                    class = "autocompleteS"
-                                    v-model="tenantModal"
-                                    :fetch-suggestions="querySearchAsync"
-                                    placeholder="请输入集团"
-                                    @select="handleSelect"
-                                ></el-autocomplete>
-                            </el-dialog>
+                            <tenant-select-dialog ref="tenantSelectDialog" ></tenant-select-dialog>
                             <div class="tenant">
                                 <span v-for="tenant in detailAll.listTenant">{{tenant.tenantName}}<img
                                     src="../../../assets/image/close_gray.png" alt=""
@@ -163,7 +150,7 @@
     </transition>
 </template>
 <script lang="ts">
-  import PlatformDetailComponent from '@/components/platform/detail/platform-detail.component'
+  import PlatformDetailComponent from '@/pages/platform/detail/platform-detail.component'
   export default PlatformDetailComponent
 </script>
 <style lang="scss" rel="stylesheet/scss">/*rel="stylesheet/scss"*/
